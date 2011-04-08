@@ -20,6 +20,13 @@ var httpTest = {
 			});
 		}
 		
+		if (type == 'PUT') {
+			data['_method'] = 'put';
+		}
+		else if (type == 'DELETE') {
+			data['_method'] = 'delete';
+		}
+		
 		$.ajax({
 			url: url,
 			type: type,
