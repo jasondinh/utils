@@ -1,0 +1,26 @@
+<html>
+  <head>
+    <meta http-equiv="Content-type" content="text/html; charset=utf-8">
+    <title>index</title>
+    <script src="js/jquery.js" type="text/javascript" charset="utf-8"></script>
+    <script src="js/script.js" type="text/javascript" charset="utf-8"></script>
+  </head>
+  <body id="index" onload="">
+    <textarea id="console" rows="20" cols="80">jQuery.ajax({
+      type: "POST",
+      url: "http://localhost/4227/api/videos/add_video",
+      data: {
+        eUsername: 'admin',
+        ePassword: 'admin',
+      },
+      success: function(data) {
+        $('#result').html("<pre>" + data + "</pre>");
+      }
+    });</textarea>
+    <input type="button" value="execute" id="run">
+    
+    <div id="result">
+      
+    </div>
+  </body>
+</html>
