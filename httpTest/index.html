@@ -1,26 +1,51 @@
 <html>
-  <head>
-    <meta http-equiv="Content-type" content="text/html; charset=utf-8">
-    <title>index</title>
-    <script src="js/jquery.js" type="text/javascript" charset="utf-8"></script>
-    <script src="js/script.js" type="text/javascript" charset="utf-8"></script>
-  </head>
-  <body id="index" onload="">
-    <textarea id="console" rows="20" cols="80">jQuery.ajax({
-      type: "POST",
-      url: "http://localhost/4227/api/videos/add_video",
-      data: {
-        eUsername: 'admin',
-        ePassword: 'admin',
-      },
-      success: function(data) {
-        $('#result').html("<pre>" + data + "</pre>");
-      }
-    });</textarea>
-    <input type="button" value="execute" id="run">
-    
-    <div id="result">
-      
-    </div>
-  </body>
+<head>
+	<meta http-equiv="Content-type" content="text/html; charset=utf-8">
+	<title>index</title>
+	<script src="js/jquery.js" type="text/javascript" charset="utf-8"></script>
+	<script src="js/script.js" type="text/javascript" charset="utf-8"></script>
+	<link rel="stylesheet" href="css/style.css" type="text/css" media="screen" title="no title" charset="utf-8">
+</head>
+<body>
+	<div id="base_url">
+		Base URL: <input size="100" type="text" name="base_url" value="http://" id="base_url" />
+	</div>	 
+
+	<div id="rest_method">
+		REST method: <input size="100" type="text" name="rest_method" value="" id="rest_method" />
+	</div>
+
+	<div id="http_method">
+		HTTP method: 
+		<select name="http_method" id="http_method"  size="1">
+			<option value="GET">GET</option>
+			<option value="POST">POST</option>
+			<option value="PUT">PUT</option>
+			<option value="DELETE">DELETE</option>
+		</select>
+	</div>
+	<div class='params'>
+		<span>
+			Name: <input size="30" type='text' class='param_names' value=''>
+		</span>
+		<span>
+			Value: <input size="30" type='text' class='param_values' value=''>
+		</span>
+		<input type='button' name='add_params' value='+' id='add_params'>
+	</div>
+	<input type="button" value="execute" id="run">
+	<div>
+		Request details:
+		<div id="details">
+
+		</div>
+	</div>
+
+	<div>
+		Result:
+		<div id="result">
+
+		</div>
+	</div>
+</body>
 </html>
